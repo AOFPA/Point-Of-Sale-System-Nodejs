@@ -1,0 +1,56 @@
+<%- include("header") %>
+<div class="container mt-3">
+        <div class="card">
+                <div class="card-header">สินค้า</div>
+                <div class="card-body">
+                        <a href="/productForm" class="btn btn-danger"
+                                >Add Product</a
+                        >
+                        <table class="table table-bordered mt-3">
+                                <thead>
+                                        <tr>
+                                                <th>barcode</th>
+                                                <th>ชื่อสินค้า</th>
+                                                <th class="text-end">
+                                                        ราคาทุน
+                                                </th>
+                                                <th class="text-end">
+                                                        ราคาจำหน่าย
+                                                </th>
+                                                <th style="width: 200px"></th>
+                                        </tr>
+                                </thead>
+                                <tbody>
+                                        <% products.forEach(item => { %>
+                                        <tr>
+                                                <td><%= item.barcode %></td>
+                                                <td><%= item.name %></td>
+                                                <td class="text-end">
+                                                        <%= item.cost %>
+                                                </td>
+                                                <td class="text-end">
+                                                        <%= item.price %>
+                                                </td>
+                                                <td>
+                                                        <a
+                                                                class="btn btn-primary"
+                                                                href="/productEdit/<%= item.id  %>"
+                                                                >แก้ไข
+                                                        </a>
+                                                        <a
+                                                                onclick="return confirm('Delete ?')"
+                                                                href="/productDelete/<%= item.id %>"
+                                                                class="btn btn-danger"
+                                                        >
+                                                                ลบ
+                                                        </a>
+                                                </td>
+                                        </tr>
+                                        <% }); %>
+                                </tbody>
+                        </table>
+                </div>
+                <div class="card-footer"></div>
+        </div>
+</div>
+<%-include("footer")%>

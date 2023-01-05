@@ -1,0 +1,61 @@
+<%- include("header") %>
+<div class="container mt-3">
+        <div class="card">
+                <div class="card-header">เพิ่มสินค้า</div>
+                <div class="card-body">
+                        <form method="post">
+                                <div class="form-group">
+                                        <label for="" class="form-label"
+                                                >Barcode
+                                        </label>
+                                        <input
+                                                type="text"
+                                                class="form-control"
+                                                value="<%= data.barcode %>"
+                                                name="barcode"
+                                        />
+                                </div>
+                                <div class="form-group">
+                                        <label for="" class="form-label"
+                                                >ชื่อสินค้า
+                                        </label>
+                                        <input
+                                                type="text"
+                                                class="form-control"
+                                                value="<%= data.name %>"
+                                                name="name"
+                                        />
+                                </div>
+                                <div class="form-group">
+                                        <label for="" class="form-label"
+                                                >ราคาทุน
+                                        </label>
+                                        <input
+                                                type="text"
+                                                class="form-control"
+                                                value="<%= data.cost %>"
+                                                name="cost"
+                                        />
+                                </div>
+                                <div class="form-group">
+                                        <label for="" class="form-label"
+                                                >ราคาจำหน่าย
+                                        </label>
+                                        <input
+                                                type="text"
+                                                class="form-control"
+                                                value="<%= data.price %>"
+                                                name="price"
+                                        />
+                                </div>
+                                <button
+                                        type="submit"
+                                        class="btn btn-danger mt-3"
+                                >
+                                        Save
+                                </button>
+                        </form>
+                </div>
+        </div>
+</div>
+<%- include("footer") %>
